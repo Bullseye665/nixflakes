@@ -113,7 +113,7 @@
           inherit system;
           specialArgs = {
             username = "incus";
-            hostName = "lesser";
+            hostName = "general";
             version = "25.11";
             inherit system;
           } // attrs;
