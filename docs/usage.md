@@ -10,7 +10,7 @@ There are no inherent advantages to using the minimal installation as opposed to
    ### 1. Fetch the flake template
 
    ```bash
-   nix flake new -t 'github:erictossell/nixflakes' ./nixflakes && cd nixflakes
+   nix flake new -t 'github:Bullseye665/nixflakes' ./nixflakes && cd nixflakes
    ```
 
    ### 2. Run the build script. 
