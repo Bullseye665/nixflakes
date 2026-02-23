@@ -1,5 +1,7 @@
 { pkgs, xlibre-overlay, ... }: {
   imports = [
+  xlibre-overlay.nixosModules.overlay-xlibre-xserver
+  xlibre-overlay.nixosModules.overlay-all-xlibre-drivers
 #  ./apps
   ./core/boot/systemd.nix
   ./core/nix
