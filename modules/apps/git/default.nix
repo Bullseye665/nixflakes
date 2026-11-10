@@ -1,8 +1,7 @@
 { config, pkgs, username, ... }:
 {
   environment.systemPackages = with pkgs; [
-    python3Full
-    python312Packages.types-lxml
+   # python312
     wget
   ];
 
