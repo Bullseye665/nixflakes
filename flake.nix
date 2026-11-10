@@ -2,7 +2,7 @@
   description = "Person's hopeful nixflake.";
   # nix flake update /home/person/nixflakes/
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -14,17 +14,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = { url = "github:hyprwm/hyprland"; };
+#    hyprland.url = "github:hyprwm/hyprland";
 
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+#    hyprlock = {
+#      url = "github:hyprwm/hyprlock";
+#      inputs.nixpkgs.follows = "nixpkgs";
+#    };
 
-    hyprpicker = {
-      url = "github:hyprwm/hyprpicker";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+#    hyprpicker = {
+#      url = "github:hyprwm/hyprpicker";
+#      inputs.nixpkgs.follows = "nixpkgs";
+#    };
 
 #    eriixpkgs = {
 #      url = "github:erictossell/eriixpkgs";
@@ -36,10 +36,10 @@
 #      inputs.nixpkgs.follows = "nixpkgs";
 #    };
 
-    plasma-manager = {
-      url = "github:pjones/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+#    plasma-manager = {
+#      url = "github:pjones/plasma-manager";
+#      inputs.nixpkgs.follows = "nixpkgs";
+#    };
 
 #    nix-gaming = {
 #      url = "github:fufexan/nix-gaming";
@@ -64,14 +64,16 @@
 #      };
 #    };
 
-    xlibre-overlay.url = "git+https://codeberg.org/takagemacoed/xlibre-overlay";
+    hytale-launcher.url = "github:JPyke3/hytale-launcher-nix";
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+    xlibre-overlay.url = "git+https://codeberg.org/takagemacoed/xlibre-overlay?ref=dev-for-26.05";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    };
+  };
 
-  outputs = { self, nixpkgs, nixos-hardware, nix-flatpak, ... }@attrs:
+  outputs = { self, nixpkgs, nixos-hardware, nix-flatpak, xlibre-overlay, ... }@attrs:
     let
       supportedSystems = [ "x86_64-linux" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
@@ -85,7 +87,7 @@
           specialArgs = {
             username = "person";
             hostName = "nixos";
-            version = "25.11";
+            version = "26.05";
             hyprlandConfig = "desktop.nix";
             inherit system;
           } // attrs;
@@ -114,7 +116,7 @@
           specialArgs = {
             username = "incus";
             hostName = "general";
-            version = "25.11";
+            version = "26.05";
             inherit system;
           } // attrs;
           modules = [
