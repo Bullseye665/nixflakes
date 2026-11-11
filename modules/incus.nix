@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, xlibre-overlay, ... }: {
   imports = [
   xlibre-overlay.nixosModules.overlay-xlibre-xserver
   xlibre-overlay.nixosModules.overlay-all-xlibre-drivers
